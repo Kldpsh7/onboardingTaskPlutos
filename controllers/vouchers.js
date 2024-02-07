@@ -40,7 +40,7 @@ module.exports.createVouchers = async (req,res) => {
       workbook.Sheets[workbook_sheet[0]]
     );
     try{
-        workbook_response.forEach(async (voucher)=>{
+        for(const voucher of workbook_response){
             const existingVoucher = await Vouchers.findOne({where:{code:voucher.code}});
             if(existingVoucher){
                 existingVoucher.title=voucher.title;
@@ -59,7 +59,7 @@ module.exports.createVouchers = async (req,res) => {
                     type:voucher.type
                 })
             }
-        })
+        }
         res.status(201).json({message:'Vouchers added / updated'});
         // const addedVouchers = await Vouchers.bulkCreate(workbook_response);
         // res.status(201).json({message:'Vouchers added in bulk',vouchers:addedVouchers});
