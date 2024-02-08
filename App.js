@@ -26,7 +26,7 @@ Vouchers.belongsToMany(Customers,{through:CustomerVoucher});
 
 sequelize.sync()
 .then(()=>{
-    app.listen(5500);
+    app.listen(5500,()=>console.log('listening on 5500'));
 })
 .catch(err=>console.log(err))
 

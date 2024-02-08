@@ -2,10 +2,10 @@
   "name": "onboardingtaskplutos",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
     "test": "jest --detectOpenHandles --forceExit",
-    "start": "nodemon app.js"
+    "start": "node App.js"
   },
   "author": "Kuldeep Sharma",
   "license": "ISC",
